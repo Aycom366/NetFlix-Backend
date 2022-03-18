@@ -8,6 +8,8 @@ const app = express();
 //middlewares import
 const morgan = require("morgan");
 const cors = require("cors");
+const helmet = require("helmet");
+const mongoSanitize = require("express-mongo-sanitize");
 
 //routes import
 const authRoute = require("./routes/authRoute");
@@ -20,6 +22,8 @@ const ErrorHandler = require("./middlewares/ErrorHandler");
 
 //middlewares
 app.use(cors());
+app.use(helmet());
+app.use(mongoSanitize());
 app.use(express.json());
 app.use(morgan("dev"));
 
