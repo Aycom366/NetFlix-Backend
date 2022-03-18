@@ -6,7 +6,7 @@ const express = require("express");
 const app = express();
 
 //middlewares import
-const morgan = require("morgan");
+// const morgan = require("morgan");
 const cors = require("cors");
 const helmet = require("helmet");
 const mongoSanitize = require("express-mongo-sanitize");
@@ -25,7 +25,7 @@ app.use(cors());
 app.use(helmet());
 app.use(mongoSanitize());
 app.use(express.json());
-app.use(morgan("dev"));
+// app.use(morgan("dev"));
 
 //routes usage
 app.use("/api/auth", authRoute);
